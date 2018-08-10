@@ -1,22 +1,36 @@
 'use strict';
 
-const adminClient = require('./');
+const KeycloakAdminClient = require('./lib/KeycloakAdminClient');
 
 const settings = {
   baseUrl: 'http://127.0.0.1:8080/auth',
-  username: 'admin',
-  password: 'admin',
+  username: 'keycloak',
+  password: 'keycloak',
   grant_type: 'password',
   client_id: 'admin-cli'
 };
 
-adminClient(settings)
-  .then((client) => {
-    client.realms.find()
-      .then((realms) => {
-        console.log('realms', realms);
-      });
-  })
-  .catch((err) => {
-    console.log('Error', err);
-  });
+const keycloakAdmin = new KeycloakAdminClient(settings);
+
+keycloakAdmin.start$().subscribe(client => {
+  //console.log('Client ==> ', client);
+
+  keycloakAdmin.startTokenRefresher$().subscribe(res => {
+    console.log('Res => ', res);
+  },
+error => {
+  console.log('Error => ', error)
+});
+});
+
+
+// adminClient(settings)
+//   .then((client) => {
+//     client.realms.find()
+//       .then((realms) => {
+//         console.log('realms', realms);
+//       });
+//   })
+//   .catch((err) => {
+//     console.log('Error', err);
+//   });
