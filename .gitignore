@@ -39,3 +39,8 @@ jspm_packages
 
 # System Files
 .DS_Store
+*Thumbs.db
+
+# IDE Files
+.history/
+.vscode/
