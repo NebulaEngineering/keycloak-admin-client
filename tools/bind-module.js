@@ -1,7 +1,6 @@
 'use strict';
 
 function bindModule (client, input) {
-  // For an
   if (typeof input === 'object') {
     const initializedModule = {};
     // https://github.com/bucharest-gold/keycloak-admin-client/issues/40
