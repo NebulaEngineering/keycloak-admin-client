@@ -24,10 +24,12 @@
   "author": {
     "name": "Nebula Engineering"
   },
-  "maintainers": [{
-    "name": "Esteban Zapata",
-    "email": "esteban.zapata@nebulae.com.co"
-  }],
+  "maintainers": [
+    {
+      "name": "Esteban Zapata",
+      "email": "esteban.zapata@nebulae.com.co"
+    }
+  ],
   "engines": {
     "node": ">= 9.8.0"
   },
