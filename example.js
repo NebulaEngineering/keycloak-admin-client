@@ -1,13 +1,13 @@
-'use strict';
+"use strict";
 
-const KeycloakAdminClient = require('./lib/KeycloakAdminClient');
+const KeycloakAdminClient = require("./lib/KeycloakAdminClient");
 
 const settings = {
-  baseUrl: 'http://127.0.0.1:8080/auth',
-  username: 'keycloak',
-  password: 'keycloak',
-  grant_type: 'password',
-  client_id: 'admin-cli'
+  baseUrl: "http://127.0.0.1:8080/auth",
+  username: "keycloak",
+  password: "keycloak",
+  grant_type: "password",
+  client_id: "admin-cli"
 };
 
 const keycloakAdmin = new KeycloakAdminClient(settings);
@@ -24,13 +24,3 @@ error => {
 });
 
 
-// adminClient(settings)
-//   .then((client) => {
-//     client.realms.find()
-//       .then((realms) => {
-//         console.log('realms', realms);
-//       });
-//   })
-//   .catch((err) => {
-//     console.log('Error', err);
-//   });
