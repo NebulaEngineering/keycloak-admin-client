@@ -12,15 +12,6 @@ const settings = {
 
 const keycloakAdmin = new KeycloakAdminClient(settings);
 
-keycloakAdmin.start$().subscribe(client => {
-  //console.log('Client ==> ', client);
-
-  keycloakAdmin.startTokenRefresher$().subscribe(res => {
-    console.log('Res => ', res);
-  },
-error => {
-  console.log('Error => ', error)
+keycloakAdmin.getToken$().subscribe(client => {
+  console.log('Client ==> ', client);
 });
-});
-
-
