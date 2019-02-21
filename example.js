@@ -15,3 +15,15 @@ const keycloakAdmin = new KeycloakAdminClient(settings);
 keycloakAdmin.getToken$().subscribe(client => {
   console.log('Client ==> ', client);
 });
+
+// keycloakAdmin.getKeycloakAdminClient().then((client) => {
+//   // Use the master realm
+//   const realmName = 'DEV_TPI';
+//   console.log('client.users => ', client[0].users);
+//   return client[0].users.checkTokenValidity(realmName).then((data) => {
+//     console.log('checkTokenValidity => ', data);
+//   },
+//   error => {
+//     console.log('Error => ', error);
+//   });
+// });
